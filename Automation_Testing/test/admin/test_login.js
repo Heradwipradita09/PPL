@@ -26,7 +26,7 @@ describe('Admin Login', function () {
     });
 
     after(async function () {
-        this.timeout(80000); // Menambahkan timeout yang lebih panjang jika diperlukan
+        this.timeout(80000); // Menambahkan timeout yang lebih panjang 
         await driver.quit();
     });
 });
