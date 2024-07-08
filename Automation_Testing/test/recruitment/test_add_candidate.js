@@ -5,13 +5,13 @@ describe('Tambah Kandidat Baru', function () {
     let driver;
 
     before(async function () {
-        this.timeout(90000); // Menambahkan timeout yang lebih panjang jika diperlukan
+        this.timeout(90000); // Menambahkan timeout yang lebih panjang 
         driver = await new Builder().forBrowser('chrome').build();
         await driver.get('https://opensource-demo.orangehrmlive.com/');
     });
 
     it('harus menambahkan kandidat baru', async function () {
-        this.timeout(20000); // Menambahkan timeout yang lebih panjang jika diperlukan
+        this.timeout(20000); // Menambahkan timeout yang lebih panjang 
         try {
             // Tunggu hingga elemen txtUsername muncul
             await driver.wait(until.elementLocated(By.id('txtUsername')), 90000);
@@ -49,7 +49,7 @@ describe('Tambah Kandidat Baru', function () {
     });
 
     after(async function () {
-        this.timeout(90000); // Menambahkan timeout yang lebih panjang jika diperlukan
+        this.timeout(90000); // Menambahkan timeout yang lebih panjang 
         await driver.quit();
     });
 });
