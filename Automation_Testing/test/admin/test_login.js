@@ -5,19 +5,19 @@ describe('Admin Login', function () {
     let driver;
 
     before(async function () {
-        this.timeout(80000); // Menambahkan timeout yang lebih panjang jika diperlukan
+        this.timeout(80000); // Menambahkan timeout yang lebih panjang 
         driver = await new Builder().forBrowser('chrome').build();
         await driver.get('https://opensource-demo.orangehrmlive.com/');
     });
 
     it('should login with valid credentials', async function () {
-        this.timeout(80000); // Menambahkan timeout yang lebih panjang jika diperlukan
+        this.timeout(80000); // Menambahkan timeout yang lebih panjang 
         try {
-            await driver.wait(until.elementLocated(By.id('txtUsername')), 90000); // Tunggu hingga elemen txtUsername muncul
+            await driver.wait(until.elementLocated(By.id('txtUsername')), 90000); 
             await driver.findElement(By.id('txtUsername')).sendKeys('Admin');
             await driver.findElement(By.id('txtPassword')).sendKeys('admin123');
             await driver.findElement(By.id('btnLogin')).click();
-            await driver.wait(until.urlContains('dashboard'), 10000); // Tunggu hingga URL mengandung 'dashboard'
+            await driver.wait(until.urlContains('dashboard'), 10000); 
             let currentUrl = await driver.getCurrentUrl();
             assert.ok(currentUrl.includes('dashboard'), 'Login berhasil');
         } catch (error) {
